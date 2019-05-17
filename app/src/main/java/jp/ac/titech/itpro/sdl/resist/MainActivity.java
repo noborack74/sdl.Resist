@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private RotationView rotationView;
     private SensorManager manager;
     private Sensor gyroscope;
-    private static final float NS2S = 1.0f / 1000000000.0f;
+    private static final double NS2S = 1.0f / 1000000000.0f;
     private double timestamp;
     private double rad = 0;
 
