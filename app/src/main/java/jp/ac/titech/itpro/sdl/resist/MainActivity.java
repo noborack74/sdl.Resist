@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private SensorManager manager;
     private Sensor gyroscope;
     private static final float NS2S = 1.0f / 1000000000.0f;
-    private float timestamp;
-    private float rad = 0;
+    private double timestamp;
+    private double rad = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
         if (timestamp != 0) {
-            final float dT = (event.timestamp - timestamp) * NS2S;
+            final double dT = (event.timestamp - timestamp) * NS2S;
             rad += omegaZ * dT;
             rotationView.setDirection(rad);
         }
